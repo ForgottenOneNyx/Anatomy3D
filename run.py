@@ -204,8 +204,8 @@ model_pos = TemporalModel(poses_valid_2d[0].shape[-2], poses_valid_2d[0].shape[-
                             filter_widths=filter_widths, causal=args.causal, dropout=args.dropout, channels=args.channels,
                             dense=args.dense)
 
-model_pos_train=nn.DataParallel(model_pos_train,device_ids=[0,1,2]) # multi-GPU
-model_pos=nn.DataParallel(model_pos,device_ids=[0,1,2]) # multi-GPU
+#model_pos_train=nn.DataParallel(model_pos_train,device_ids=[0,1,2]) # multi-GPU
+#model_pos=nn.DataParallel(model_pos,device_ids=[0,1,2]) # multi-GPU
 
 
 receptive_field = model_pos.module.receptive_field()
